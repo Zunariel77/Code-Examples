@@ -84,10 +84,8 @@ public class Unit : MonoBehaviour {
                 agent.isStopped = false;
                 agent.SetDestination(fortress.position);
             }
-            else
-            {
-                if(target != null)
-                {
+            else if(target != null)
+		    {
                     Vector3 thisPos = transform.position;
                     Vector3 point = target.transform.position;
                     float dist = Vector3.Distance(thisPos, point);
@@ -105,9 +103,7 @@ public class Unit : MonoBehaviour {
                         {
                             target.Damage(damage, this);                            
                         }
-                        else
-                        {
-                            if(attackRate <= 0)
+                        else if(attackRate <= 0)
                             {
                                 attackRate = 3;
                                 Shoot();
@@ -115,11 +111,11 @@ public class Unit : MonoBehaviour {
                             else
                             {
                                 attackRate -= 1;
-                            }                           
-                        }                      
+                            }       
+                                              
                     }                   
-                }
-            }           
+                }          
+                      
         }
     }
 
